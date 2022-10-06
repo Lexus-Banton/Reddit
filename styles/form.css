@@ -56,9 +56,15 @@ form button {
     background: var(--action-color);
     border: 0;
     font-weight: bold;
-    color: white;
+    color: #fff1fa;
+    cursor: pointer;
 }
 
 form button:disabled {
     opacity: 0.5;
+}
+
+#preview {
+    height: 128px;
+    width: 128px;
 }
