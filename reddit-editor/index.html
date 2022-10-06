@@ -8,11 +8,11 @@
 
         <!-- title and favicon -->
         <title>Pink Reddit</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/assets/smolreddit.png"/>
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="pet-editor.js"></script>
+        <script type="module" src="post-editor.js"></script>
 
         <!-- fonts -->
 
@@ -50,7 +50,7 @@
             </label>
             <img id="preview" class="preview" alt="avatar preview" src="../assets/placeholder.png">
 
-            <button>Add Post</button>
+            <button id="add-button">Add Post</button>
 
             <p id="error-display"></p>
         </form>
