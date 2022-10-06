@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://sgsqhdtlconmltdgcqzd.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNnc3FoZHRsY29ubWx0ZGdjcXpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjUwODAzNzMsImV4cCI6MTk4MDY1NjM3M30.nIbCKve45Pb2NvJSQTpQlTkkQ2S8mpK6Ull7zd4lNQg';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -27,3 +28,10 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createPost(post) {
+    return await client.from('reddit').insert(post);
+}
+
+export async function getPost(id) {
+    return await client.from('reddit').select('*').eq('id').order('created_at').single();
+}
