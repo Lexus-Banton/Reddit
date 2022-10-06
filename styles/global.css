@@ -1,11 +1,11 @@
 :root {
-    --background: rgb(224, 234, 247);
-    --header-background: white;
-    --text-color: rgb(7, 5, 68);
-    --label-color: rgb(75, 102, 98);
-    --placeholder-color: rgb(136, 136, 153);
-    --offset-color: rgb(217, 236, 217);
-    --action-color: rgb(77, 132, 252);
+    --background: #fad9c1;
+    --header-background: #fe9c8f;
+    --text-color: #764ba2;
+    --label-color: #9269bb;
+    --placeholder-color: #9469be;
+    --offset-color: #ffecd2;
+    --action-color: rgb(235, 97, 173);
 
     --primary-font: 'Rubik', Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
         'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
@@ -63,7 +63,7 @@ main {
 
 .error {
     min-height: 1em;
-    color: red;
+    color: rgb(247, 22, 22);
 }
 
 .hidden {
