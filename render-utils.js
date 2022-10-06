@@ -10,6 +10,9 @@ export function renderPost(post) {
     const p = document.createElement('p');
     p.textContent = post.about;
 
+    const img = document.createElement('img');
+    img.src = post.image_url;
+
     a.append(h2, p);
     li.append(a);
 

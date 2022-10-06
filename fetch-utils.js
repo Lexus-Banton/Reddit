@@ -35,3 +35,22 @@ export async function createPost(post) {
 export async function getPost(id) {
     return await client.from('reddit').select('*').eq('id').order('created_at').single();
 }
+
+export async function uploadImage(bucketName, imagePath, imageFile) {
+    const bucket = client.storage.from(bucketName);
+
+    const response = await bucket.upload(imagePath, imageFile, {
+        cacheControl: '3600',
+
+        upsert: true,
+    });
+    if (response.error) {
+        // eslint-disable-next-line no-console
+        console.log(response.error);
+        return null;
+    }
+
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
+
+    return url;
+}
