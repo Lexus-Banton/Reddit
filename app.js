@@ -4,9 +4,30 @@ import './auth/user.js';
 import { renderPost } from './render-utils.js';
 
 /* Get DOM Elements */
-
+const postList = document.getElementById('post-list');
+const errorDisplay = document.getElementById('error-display');
 /* State */
+let error = null;
+let posts = [];
 
 /* Events */
 
 /* Display Functions */
+function displayPosts() {
+    postList.innerHTML = '';
+
+    for (const post of posts) {
+        const postEl = renderPost(post);
+        postList.append(postEl);
+    }
+}
+
+function displayError() {
+    if (error) {
+        //eslint-disable-next-line no-console
+        console.log(error);
+        errorDisplay.textContent = error.message;
+    } else {
+        errorDisplay.textContent = '';
+    }
+}

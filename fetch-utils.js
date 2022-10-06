@@ -32,8 +32,12 @@ export async function createPost(post) {
     return await client.from('reddit').insert(post);
 }
 
+export async function getPosts() {
+    return await client.from('reddit').select('*');
+}
+
 export async function getPost(id) {
-    return await client.from('reddit').select('*').eq('id').order('created_at').single();
+    return await client.from('reddit').select('*').eq('id', id).order('created_at').single();
 }
 
 export async function uploadImage(bucketName, imagePath, imageFile) {
