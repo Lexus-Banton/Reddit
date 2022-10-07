@@ -23,7 +23,7 @@ li:hover {
     box-shadow: var(--hover-box-shadow);
 }
 
-li a {
+li.a {
     text-decoration: none;
     color: initial;
     cursor: pointer;

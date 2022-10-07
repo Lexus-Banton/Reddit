@@ -1,8 +1,8 @@
 export function renderPost(post) {
     const li = document.createElement('li');
 
-    //const a = document.createElement('a');
-    //a.href = `/reddit/?id=${post.id}`;
+    const a = document.createElement('a');
+    a.href = `/reddit/?id=${post.id}`;
 
     const h2 = document.createElement('h2');
     h2.textContent = post.title;
@@ -14,7 +14,7 @@ export function renderPost(post) {
     img.src = post.image_url;
 
     li.append(h2, p, img);
-    //li.append();
+    a.append(li);
 
-    return li;
+    return a;
 }
