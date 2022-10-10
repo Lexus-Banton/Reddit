@@ -12,7 +12,7 @@
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="reddit.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,6 +38,16 @@
             </nav>
         </header>
 
-        <main></main>
+        <main>
+            <section class="post-details">
+                <h1 id="post-title">Title</h1>
+                <img id="post-image" src="../assets/placeholder.png" />
+                <p id="post-about">Info</p>
+            </section>
+
+            <p id="error-display"></p>
+
+            <div></div>
+        </main>
     </body>
 </html>
