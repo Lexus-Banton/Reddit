@@ -37,7 +37,16 @@ export async function getPosts() {
 }
 
 export async function getPost(id) {
-    return await client.from('reddit').select('*').eq('id', id).order('created_at').single();
+    return await client
+        .from('reddit')
+        .select('*, rcomments(*)')
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'rcomments', ascending: false })
+        .single();
+}
+
+export async function createComment(comment) {
+    return await client.from('rcomments').insert(comment).single();
 }
 
 export async function uploadImage(bucketName, imagePath, imageFile) {
