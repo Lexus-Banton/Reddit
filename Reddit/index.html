@@ -16,7 +16,7 @@
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
 
-        <script type="module" src="app.js"></script>
+        <script type="module" src="reddit.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,8 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <link rel="stylesheet" href="/styles/posts.css" />
+        <link rel="stylesheet" href="/styles/post.css" />
+        <!-- add link for page specific css -->
     </head>
 
     <body>
@@ -37,14 +38,27 @@
             <img class="logo" src="/assets/reddit.png" alt="logo" />
             <p class="title">Reddit</p>
             <nav>
-                <a href="/reddit-editor/index.html">Create a post</a>
+                <a href="/">Home</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <p id="error-display" class="error"></p>
-            <ul id="post-list" class="post-list"></ul>
+            <section class="post-details">
+                <h1 id="post-title">Title</h1>
+                <img id="post-image" src="../assets/placeholder.png" />
+                <p id="post-about">Info</p>
+            </section>
+
+            <p id="error-display"></p>
+
+            <div>
+                <form id="comment-form">
+                    <input name="text" placeholder="Comment goes here" />
+                    <button>Post</button>
+                </form>
+            </div>
+            <ul id="comment-list"></ul>
         </main>
     </body>
 </html>

@@ -1,0 +1,10 @@
+.post-details {
+    display: grid;
+    background-color: #168573;
+    justify-items: center;
+}
+
+#post-image {
+    object-fit: contain;
+    width: 400px;
+}
