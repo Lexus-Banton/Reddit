@@ -15,8 +15,7 @@ const commentForm = document.getElementById('comment-form');
 
 /*state*/
 let error = null;
-let post = {};
-let comments = [];
+let post = null;
 
 /*Events*/
 window.addEventListener('load', async () => {
@@ -30,7 +29,6 @@ window.addEventListener('load', async () => {
     const response = await getPost(id);
     error = response.error;
     post = response.data;
-    comments = post.comments;
 
     if (error) {
         displayError();
@@ -40,9 +38,8 @@ window.addEventListener('load', async () => {
         location.replace('/');
     } else {
         displayPost();
+        displayComments();
     }
-
-    displayComments();
 });
 
 commentForm.addEventListener('submit', async (e) => {
@@ -60,7 +57,7 @@ commentForm.addEventListener('submit', async (e) => {
         displayError();
     } else {
         const comment = response.data;
-        comments.unshift(comment);
+        post.rcomments.unshift(comment);
         displayComments();
 
         commentForm.reset();
@@ -86,7 +83,7 @@ function displayPost() {
 function displayComments() {
     commentList.innerHTML = '';
 
-    for (const comment of comments) {
+    for (const comment of post.rcomments) {
         const commentEl = renderComment(comment);
         commentList.append(commentEl);
     }
